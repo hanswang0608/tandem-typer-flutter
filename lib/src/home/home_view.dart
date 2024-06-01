@@ -10,7 +10,7 @@ class HomeView extends StatefulWidget {
   final SettingsController controller;
 
   @override
-  State<StatefulWidget> createState() => _HomeViewState();
+  State<HomeView> createState() => _HomeViewState();
 }
 
 class _HomeViewState extends State<HomeView> {
@@ -18,7 +18,20 @@ class _HomeViewState extends State<HomeView> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Home'),
+        // title: const Text('Home'),
+        title: Row(
+          children: [
+            Image.asset(
+              'assets/tt_wide_small.png',
+              scale: 2,
+            ),
+            const Padding(padding: EdgeInsets.symmetric(horizontal: 5)),
+            const Text(
+              'Tandem Typer',
+              style: TextStyle(fontSize: 25),
+            ),
+          ],
+        ),
         actions: [
           IconButton(
             onPressed: () {
@@ -32,14 +45,10 @@ class _HomeViewState extends State<HomeView> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text(
-              'Tandem Typer',
-              style: TextStyle(fontSize: 30),
-            ),
-            TextButton(
+            OutlinedButton(
               child: const Text(
                 'Start',
-                style: TextStyle(fontSize: 30),
+                style: TextStyle(fontSize: 40),
               ),
               onPressed: () {
                 Navigator.pushNamed(context, '/game');

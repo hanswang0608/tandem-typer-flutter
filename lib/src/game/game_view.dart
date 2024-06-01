@@ -100,7 +100,7 @@ class _GameViewState extends State<GameView> {
       },
       child: Scaffold(
         appBar: AppBar(
-          title: const Text("Game"),
+          // title: const Text("Game"),
           actions: [
             IconButton(
               onPressed: () {
